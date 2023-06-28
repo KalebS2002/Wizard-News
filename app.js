@@ -69,7 +69,8 @@ app.get("/posts/:id", (req, res) => {
   </head>
   <body>
   <div class = "singlePostView">
-  <h2>${post.title} </h2>
+  <header><img src="/logo.png"/>Wizard News</header>
+  <h2> ${post.title} </h2>
   <p>${post.content}</p>
   </div>
   `);
@@ -78,7 +79,7 @@ app.get("/posts/:id", (req, res) => {
 
 app.use(express.static("public"));
 
-const PORT = ({ PORT = 1337 } = process.env);
+({ PORT = 1337 } = process.env);
 
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
